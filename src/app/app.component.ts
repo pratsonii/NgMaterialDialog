@@ -1,4 +1,6 @@
+import { DialogComponent } from './dialog/dialog.component';
 import { Component } from '@angular/core';
+import { MatDialog } from '../../node_modules/@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  constructor(public dialog : MatDialog){}
+
+  openDialog()
+  {
+    this.dialog.open(DialogComponent, {data : {name : 'Pratik'}});
+  }
 }
